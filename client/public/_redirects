@@ -1,0 +1,5 @@
+# Sponsor shortlink
+/s/:sponsor  /?sponsor=:sponsor  302
+
+# SPA fallback
+/* /index.html 200
