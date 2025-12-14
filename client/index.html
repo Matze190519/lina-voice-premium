@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LINA Voice</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Netlify Form Detection -->
+    <form name="partner-contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="whatsappNumber" />
+      <input type="text" name="role" />
+      <input type="text" name="interest" />
+      <textarea name="message"></textarea>
+      <input type="checkbox" name="privacy" />
+      <input type="hidden" name="subject" />
+    </form>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
