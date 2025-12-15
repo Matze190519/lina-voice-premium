@@ -79,6 +79,16 @@ export default function PartnerContactForm() {
 
       setIsSuccess(true);
       toast.success("Anfrage erfolgreich gesendet!");
+      
+      // Meta Pixel Lead Event
+      if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', 'Lead', {
+          currency: 'EUR',
+          value: 0.00,
+          source: 'KI_Voice_PartnerForm',
+          content_name: 'Partner Kontaktformular'
+        });
+      }
     } catch (error) {
       console.error("Form submission error:", error);
       toast.error("Fehler beim Senden. Bitte versuche es später erneut.");

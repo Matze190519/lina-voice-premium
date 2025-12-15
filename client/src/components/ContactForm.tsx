@@ -35,6 +35,16 @@ export default function ContactForm({ open, onOpenChange, type = 'default' }: Co
       setIsSubmitting(false);
       setIsSuccess(true);
       
+      // Meta Pixel Lead Event
+      if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', 'Lead', {
+          currency: 'EUR',
+          value: 0.00,
+          source: 'KI_Voice_ContactForm',
+          content_name: 'Kontaktformular'
+        });
+      }
+      
       // Keep success message visible until user closes it
       // setTimeout(() => {
       //   setIsSuccess(false);
